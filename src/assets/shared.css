@@ -109,6 +109,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 92px;
+  overflow-x: clip;
 }
 
 body {
@@ -119,7 +120,7 @@ body {
     radial-gradient(circle at 88% 4%, var(--body-glow-b), transparent 22%);
   color: var(--text);
   font: 16px/1.65 Inter, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color .25s ease, color .25s ease;
 }
 
@@ -414,6 +415,7 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  min-height: 40px;
   color: var(--muted);
   transition: color .2s ease;
 }
@@ -455,6 +457,8 @@ footer {
     top: 72px;
     left: 14px;
     right: 14px;
+    max-height: calc(100dvh - 86px);
+    overflow-y: auto;
     padding: 16px;
     display: none;
     align-items: stretch;
@@ -472,13 +476,21 @@ footer {
 
   .links a {
     display: flex;
-    padding: 11px 12px;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 12px;
     border-radius: 10px;
   }
 
   .links .nav-cta {
     justify-content: center;
     margin-top: 4px;
+  }
+
+  .theme,
+  .menu {
+    width: 44px;
+    height: 44px;
   }
 
   .cta {
@@ -504,8 +516,12 @@ footer {
   }
 
   .cta {
-    padding: 42px 20px;
+    padding: 36px 20px;
     border-radius: 26px;
+  }
+
+  .cta h2 {
+    font-size: clamp(30px, 8.8vw, 44px);
   }
 
   .foot {
@@ -514,7 +530,11 @@ footer {
   }
 
   .foot-links {
-    gap: 10px 16px;
+    gap: 4px 16px;
+  }
+
+  .foot-link {
+    min-height: 44px;
   }
 }
 
