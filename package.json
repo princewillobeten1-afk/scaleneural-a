@@ -1,0 +1,20 @@
+{
+  "name": "scaleneural-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx scripts/build.ts && tsx server.ts",
+    "build": "tsx scripts/build.ts && tsc --noEmit",
+    "start": "tsx server.ts",
+    "lint": "tsc --noEmit",
+    "test": "tsx --test src/theme.test.ts"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "express": "^5.3.0",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explore industry-specific AI automation opportunities across healthcare, finance, real estate, e-commerce, logistics, SaaS, and more.">
+  <title>Industries We Automate — ScaleNeural AI</title>
+  <script>
+    try {
+      var t = localStorage.getItem('sn-theme') === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+      document.documentElement.style.colorScheme = t;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/assets/shared.css">
+  <link rel="stylesheet" href="/assets/sectors.css">
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="wrap">
+      <a class="brand" href="/">ScaleNeural <i>AI</i></a>
+      <div class="nav-right">
+        <div class="links" id="navLinks">
+          <a href="/#services">Services</a>
+          <a href="/#process">Process</a>
+          <a class="active" href="/sectors/" aria-current="page">Sectors</a>
+          <a href="/about/">About</a>
+          <a class="btn primary nav-cta" href="/#contact">Book an AI audit</a>
+        </div>
+        <div class="nav-controls">
+          <button class="theme" id="theme" type="button" aria-label="Switch to light mode" title="Switch to light mode" aria-pressed="false"></button>
+          <button class="menu" id="menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <header class="hero">
+      <div class="aurora"></div>
+      <div class="gridbg"></div>
+      <div class="wrap">
+        <div class="crumb"><a href="/">Home</a><span>›</span><span>Sectors</span></div>
+        <h1>AI automation,<br><span class="gradient">shaped for your sector.</span></h1>
+        <p class="lead">Every industry has different workflows, regulations and customer expectations. We audit the way your organization operates, then build practical automation around the work that matters most.</p>
+      </div>
+    </header>
+    <section class="outcomes">
+      <div class="wrap outcome-grid reveal">
+        <div class="outcome"><strong><i class="dot"></i>Faster response</strong><span>Handle requests and follow-ups sooner</span></div>
+        <div class="outcome"><strong><i class="dot"></i>Lower workload</strong><span>Remove repetitive manual steps</span></div>
+        <div class="outcome"><strong><i class="dot"></i>Cleaner data</strong><span>Keep systems accurate and connected</span></div>
+        <div class="outcome"><strong><i class="dot"></i>Scalable service</strong><span>Grow without matching complexity</span></div>
+      </div>
+    </section>
+    <section class="industries">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Industry applications</div>
+            <h2>Where intelligent automation creates leverage.</h2>
+          </div>
+          <p>These are examples—not limits. Our audit starts with your real workflow and identifies the best opportunities within it.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal tilt" id="healthcare">
+            <div class="icon">⚕</div>
+            <h3>Healthcare</h3>
+            <p>Reduce administrative friction while keeping people at the center of care.</p>
+            <ul class="uses"><li>Patient intake and routing</li><li>Appointment reminders</li><li>Document processing</li><li>Internal knowledge support</li></ul>
+          </article>
+          <article class="card reveal tilt" id="finance" style="--glow:rgba(164,92,255,.14)">
+            <div class="icon">◇</div>
+            <h3>Financial Services</h3>
+            <p>Accelerate information-heavy processes with consistent, traceable workflows.</p>
+            <ul class="uses"><li>Client onboarding</li><li>Document classification</li><li>Reporting workflows</li><li>Service request routing</li></ul>
+          </article>
+          <article class="card reveal tilt" id="real-estate">
+            <div class="icon">⌂</div>
+            <h3>Real Estate</h3>
+            <p>Move leads, listings and transactions forward without manual chasing.</p>
+            <ul class="uses"><li>Lead qualification</li><li>Property inquiry response</li><li>Viewing follow-ups</li><li>Transaction coordination</li></ul>
+          </article>
+          <article class="card reveal tilt" id="ecommerce" style="--glow:rgba(85,230,177,.13)">
+            <div class="icon">◆</div>
+            <h3>E-commerce</h3>
+            <p>Create faster digital buying experiences across sales, service and operations.</p>
+            <ul class="uses"><li>Customer support triage</li><li>Order-status workflows</li><li>Review and feedback routing</li><li>Product-data enrichment</li></ul>
+          </article>
+          <article class="card reveal tilt" id="retail" style="--glow:rgba(255,115,170,.14)">
+            <div class="icon">◫</div>
+            <h3>Retail</h3>
+            <p>Keep customer service, stock information and store operations moving together.</p>
+            <ul class="uses"><li>Inventory alerts</li><li>Customer inquiry routing</li><li>Store reporting</li><li>Loyalty follow-ups</li></ul>
+          </article>
+          <article class="card reveal tilt" id="professional-services">
+            <div class="icon">↗</div>
+            <h3>Professional Services</h3>
+            <p>Give experts more time for valuable client work and less administration.</p>
+            <ul class="uses"><li>Client intake</li><li>Proposal generation</li><li>Meeting follow-ups</li><li>Knowledge retrieval</li></ul>
+          </article>
+          <article class="card reveal tilt" id="saas-technology" style="--glow:rgba(164,92,255,.14)">
+            <div class="icon">⌘</div>
+            <h3>SaaS &amp; Technology</h3>
+            <p>Connect the customer lifecycle and remove repetitive work across teams.</p>
+            <ul class="uses"><li>Lead enrichment</li><li>Product support routing</li><li>Customer onboarding</li><li>Internal operations</li></ul>
+          </article>
+          <article class="card reveal tilt" id="logistics">
+            <div class="icon">⇄</div>
+            <h3>Logistics &amp; Supply Chain</h3>
+            <p>Improve visibility and response across fast-moving operational workflows.</p>
+            <ul class="uses"><li>Shipment updates</li><li>Exception handling</li><li>Vendor communication</li><li>Operations reporting</li></ul>
+          </article>
+          <article class="card reveal tilt" id="manufacturing" style="--glow:rgba(85,230,177,.13)">
+            <div class="icon">⚙</div>
+            <h3>Manufacturing</h3>
+            <p>Coordinate information from the floor to the back office more efficiently.</p>
+            <ul class="uses"><li>Work-order routing</li><li>Quality documentation</li><li>Maintenance alerts</li><li>Supplier workflows</li></ul>
+          </article>
+          <article class="card reveal tilt" id="construction">
+            <div class="icon">△</div>
+            <h3>Construction</h3>
+            <p>Coordinate projects, documents and teams with fewer manual handoffs.</p>
+            <ul class="uses"><li>Project update routing</li><li>Quote and document workflows</li><li>Site issue escalation</li><li>Supplier coordination</li></ul>
+          </article>
+          <article class="card reveal tilt" id="education">
+            <div class="icon">✦</div>
+            <h3>Education</h3>
+            <p>Support learners and staff with responsive, organized information flows.</p>
+            <ul class="uses"><li>Enrollment inquiries</li><li>Student support triage</li><li>Document workflows</li><li>Internal knowledge access</li></ul>
+          </article>
+          <article class="card reveal tilt" id="hospitality" style="--glow:rgba(224,83,206,.14)">
+            <div class="icon">⌁</div>
+            <h3>Hospitality</h3>
+            <p>Deliver faster guest service while simplifying repetitive back-office work.</p>
+            <ul class="uses"><li>Guest inquiry response</li><li>Booking follow-ups</li><li>Feedback routing</li><li>Staff request coordination</li></ul>
+          </article>
+          <article class="card reveal tilt" id="media">
+            <div class="icon">▶</div>
+            <h3>Media</h3>
+            <p>Move content, approvals and audience information through faster workflows.</p>
+            <ul class="uses"><li>Content briefing</li><li>Approval routing</li><li>Asset organization</li><li>Performance reporting</li></ul>
+          </article>
+          <article class="card reveal tilt" id="nonprofits" style="--glow:rgba(85,230,177,.13)">
+            <div class="icon">●</div>
+            <h3>Nonprofits</h3>
+            <p>Reduce administrative load so teams can spend more time on their mission.</p>
+            <ul class="uses"><li>Donor communication</li><li>Volunteer onboarding</li><li>Grant-document workflows</li><li>Impact reporting</li></ul>
+          </article>
+          <article class="card reveal tilt" id="public-sector">
+            <div class="icon">▦</div>
+            <h3>Public Sector</h3>
+            <p>Improve service delivery with consistent, accountable information workflows.</p>
+            <ul class="uses"><li>Request intake and routing</li><li>Document processing</li><li>Citizen communication</li><li>Operations reporting</li></ul>
+          </article>
+          <article class="card wide reveal tilt" id="more-sectors" style="--glow:rgba(164,92,255,.16)">
+            <div>
+              <div class="icon">∞</div>
+              <h3>And beyond</h3>
+              <p>Every organization contains processes that can be improved. If work is repeated, delayed, copied between systems or dependent on memory, it is worth auditing.</p>
+            </div>
+            <ul class="uses"><li>Sales and lead management</li><li>Customer communication</li><li>CRM and data operations</li><li>Document processing</li><li>Internal approvals</li><li>Reporting and insights</li></ul>
+          </article>
+          <article class="card reveal tilt" style="--glow:rgba(57,169,255,.17)">
+            <div class="icon">◎</div>
+            <h3>Your organization</h3>
+            <p>The strongest automation is designed around how your team actually works.</p>
+            <ul class="uses"><li>Audit current processes</li><li>Prioritize by impact</li><li>Build with guardrails</li><li>Measure and improve</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <div class="wrap">
+      <section class="cta reveal">
+        <div class="kicker">Start with an AI audit</div>
+        <h2>Find the best opportunities<br><span class="gradient">inside your operation.</span></h2>
+        <p>We’ll map your workflows, identify the highest-value automation opportunities, and give you a clear path from idea to implementation.</p>
+        <a class="btn primary" href="/#contact">Book your AI audit →</a>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap foot">
+      <div class="foot-brand">
+        <strong>ScaleNeural AI</strong>
+        <span>AI audits and automation, built to scale.</span>
+      </div>
+      <div class="foot-links" aria-label="Contact and social links">
+        <a class="foot-link" href="mailto:scaleneural@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>scaleneural@gmail.com</span>
+        </a>
+        <a class="foot-link" href="tel:08100611016">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>08100611016</span>
+        </a>
+        <a class="foot-link" href="https://www.linkedin.com/in/prince-obeten-17b0042a1?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_ios" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      <span>© 2026 ScaleNeural AI</span>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
