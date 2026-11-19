@@ -17,6 +17,10 @@ app.get('/sectors', (_req, res) => {
   res.sendFile(resolve(distDir, 'sectors', 'index.html'));
 });
 
+app.get('/studio', (_req, res) => {
+  res.sendFile(resolve(distDir, 'studio', 'index.html'));
+});
+
 app.use((_req, res) => {
   const indexFile = resolve(distDir, 'index.html');
   if (existsSync(indexFile)) {

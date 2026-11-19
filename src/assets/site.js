@@ -113,14 +113,73 @@
   }
 
   const progress = document.getElementById('progress');
-  if (progress) {
-    const updateProgress = () => {
+  const backToTop = document.getElementById('backToTop');
+  const heroSection = document.querySelector('.hero');
+
+  if (progress || backToTop) {
+    let rafId = 0;
+
+    const renderScrollUi = () => {
+      rafId = 0;
       const doc = document.documentElement;
       const maxScroll = doc.scrollHeight - doc.clientHeight;
-      progress.style.width = maxScroll > 0 ? `${(doc.scrollTop / maxScroll) * 100}%` : '0%';
+      const scrollTop = Math.max(0, window.scrollY || doc.scrollTop || 0);
+
+      if (progress) {
+        const ratio = maxScroll > 0 ? Math.min(1, scrollTop / maxScroll) : 0;
+        progress.style.transform = `scaleX(${ratio})`;
+        progress.dataset.active = ratio > 0 ? 'true' : 'false';
+      }
+
+      if (backToTop) {
+        const visible = heroSection
+          ? scrollTop > 0 && heroSection.getBoundingClientRect().bottom <= 120
+          : scrollTop >= 400;
+        backToTop.classList.toggle('show', visible);
+        backToTop.setAttribute('aria-hidden', String(!visible));
+        backToTop.setAttribute('tabindex', visible ? '0' : '-1');
+      }
     };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
+
+    const scheduleScrollUi = () => {
+      if (!rafId) {
+        rafId = window.requestAnimationFrame(renderScrollUi);
+      }
+    };
+
+    window.addEventListener('scroll', scheduleScrollUi, { passive: true });
+    window.addEventListener('resize', scheduleScrollUi, { passive: true });
+    window.addEventListener('load', scheduleScrollUi, { passive: true });
+    renderScrollUi();
+
+    if (backToTop) {
+      backToTop.addEventListener('click', () => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    }
+  }
+
+  const faqList = document.getElementById('faqList');
+  if (faqList) {
+    const faqItems = Array.from(faqList.querySelectorAll('.faq-item'));
+    faqItems.forEach((item) => {
+      const trigger = item.querySelector('.faq-trigger');
+      const panel = item.querySelector('.faq-panel');
+      if (!trigger || !panel) return;
+
+      trigger.addEventListener('click', () => {
+        const willOpen = !item.classList.contains('open');
+        faqItems.forEach((other) => {
+          const otherTrigger = other.querySelector('.faq-trigger');
+          const otherPanel = other.querySelector('.faq-panel');
+          const active = other === item && willOpen;
+          other.classList.toggle('open', active);
+          otherTrigger?.setAttribute('aria-expanded', String(active));
+          otherPanel?.setAttribute('aria-hidden', String(!active));
+        });
+      });
+    });
   }
 
   if (

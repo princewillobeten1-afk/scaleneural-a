@@ -48,7 +48,7 @@
   --cta-glow: rgba(164, 92, 255, .3);
   --input-bg: #060714;
   --menu-shadow: 0 18px 50px rgba(0, 0, 0, .35);
-  --progress-shadow: 0 0 18px rgba(57, 169, 255, .5);
+  --progress-shadow: 0 0 12px rgba(57, 169, 255, .38);
 }
 
 [data-theme="light"] {
@@ -99,7 +99,7 @@
   --cta-glow: rgba(124, 58, 237, .14);
   --input-bg: #f9faff;
   --menu-shadow: 0 18px 48px rgba(24, 34, 78, .14);
-  --progress-shadow: 0 0 14px rgba(14, 118, 230, .35);
+  --progress-shadow: 0 0 10px rgba(14, 118, 230, .24);
 }
 
 * {
@@ -138,11 +138,21 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, var(--blue), var(--purple));
+  background: linear-gradient(90deg, var(--blue), #7e66ff 55%, var(--purple));
   box-shadow: var(--progress-shadow);
   z-index: 30;
-  width: 0;
+  pointer-events: none;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  will-change: transform;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.progress[data-active="true"] {
+  opacity: .95;
 }
 
 .nav {
@@ -430,6 +440,51 @@ footer {
   flex-shrink: 0;
 }
 
+.back-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 18;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  box-shadow: var(--menu-shadow);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(14px) scale(0.92);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.25s ease;
+}
+
+.back-top.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.back-top:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-3px);
+}
+
+.back-top svg {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(34px) scale(.985);
@@ -535,6 +590,13 @@ footer {
 
   .foot-link {
     min-height: 44px;
+  }
+
+  .back-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
   }
 }
 

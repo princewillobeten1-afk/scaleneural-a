@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive 3D architectural model of the ScaleNeural AI automation engine.">
+  <title>3D Studio — ScaleNeural AI</title>
+  <script>
+    try {
+      var t = localStorage.getItem('sn-theme') === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+      document.documentElement.style.colorScheme = t;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/assets/shared.css">
+  <link rel="stylesheet" href="/assets/studio.css">
+</head>
+<body class="studio-body">
+  <div id="sceneMount" class="scene-mount" aria-label="Interactive 3D ScaleNeural Core architecture"></div>
+
+  <header class="studio-topbar">
+    <div class="studio-brand-pill">
+      <a class="brand" href="/">ScaleNeural <i>AI</i></a>
+      <span class="studio-sep" aria-hidden="true">/</span>
+      <span class="studio-badge">3D Core Studio</span>
+    </div>
+    <div class="studio-top-actions">
+      <a class="studio-back" href="/">← Back to site</a>
+      <button class="theme" id="theme" type="button" aria-label="Switch to light mode" title="Switch to light mode" aria-pressed="false"></button>
+    </div>
+  </header>
+
+  <section class="studio-dock" id="studioDock" aria-label="3D scene controls">
+    <button
+      class="dock-collapse"
+      id="dockCollapse"
+      type="button"
+      aria-expanded="true"
+      aria-controls="dockPanel"
+      title="Toggle controls (H)"
+    >▾ Hide Controls</button>
+
+    <div class="dock-panel" id="dockPanel">
+      <div class="dock-status">
+        <div class="dock-selection">
+          <strong id="selectionLabel">Neural Core</strong>
+          <span id="selectionSummary">Central orchestration kernel coordinating agents, data &amp; guardrails</span>
+        </div>
+        <div class="dock-utility">
+          <button class="dock-btn" id="toggleMotion" type="button" aria-pressed="false">Pause</button>
+          <button class="dock-btn" id="resetView" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="dock-controls">
+        <label class="dock-slider" for="explodeRange">
+          <span class="dock-label">Explode</span>
+          <input id="explodeRange" type="range" min="0" max="100" value="0" aria-label="Explode architecture layers">
+          <span class="dock-val" id="explodeValue">0%</span>
+        </label>
+
+        <div class="dock-group" role="group" aria-label="Camera views">
+          <button class="dock-pill active" type="button" data-cam="overview">Overview</button>
+          <button class="dock-pill" type="button" data-cam="core">Core</button>
+          <button class="dock-pill" type="button" data-cam="top">Top</button>
+          <button class="dock-pill" type="button" data-cam="conduits">Conduits</button>
+        </div>
+
+        <div class="dock-group dock-swatches" role="group" aria-label="Material finishes">
+          <button class="swatch active" type="button" data-finish="titanium" title="Titanium finish" aria-label="Titanium finish"></button>
+          <button class="swatch" type="button" data-finish="azure" title="Azure finish" aria-label="Azure finish"></button>
+          <button class="swatch" type="button" data-finish="gold" title="Brass finish" aria-label="Brass finish"></button>
+          <button class="swatch" type="button" data-finish="ceramic" title="Frost finish" aria-label="Frost finish"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/assets/studio.js"></script>
+</body>
+</html>

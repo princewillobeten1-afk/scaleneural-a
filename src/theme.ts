@@ -48,3 +48,39 @@ export function formatAuditSuccessMessage(fullName: string): string {
   }
   return `Thanks, ${firstName} — your audit request has been received.`;
 }
+
+export function calculateScrollProgress(
+  scrollTop: number,
+  scrollHeight: number,
+  clientHeight: number
+): number {
+  const maxScroll = scrollHeight - clientHeight;
+  if (!Number.isFinite(maxScroll) || maxScroll <= 0) {
+    return 0;
+  }
+  if (!Number.isFinite(scrollTop) || scrollTop <= 0) {
+    return 0;
+  }
+  return Math.min(1, scrollTop / maxScroll);
+}
+
+export function shouldShowBackToTop(
+  heroBottomInViewport: number,
+  scrollTop: number,
+  hasHero: boolean
+): boolean {
+  if (!Number.isFinite(scrollTop) || scrollTop <= 0) {
+    return false;
+  }
+  if (hasHero) {
+    return Number.isFinite(heroBottomInViewport) && heroBottomInViewport <= 120;
+  }
+  return scrollTop >= 400;
+}
+
+export function toggleFaqItem(
+  activeIndex: number | null,
+  clickedIndex: number
+): number | null {
+  return activeIndex === clickedIndex ? null : clickedIndex;
+}

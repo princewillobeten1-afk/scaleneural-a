@@ -1,3 +1,4 @@
+import { build } from 'esbuild';
 import { cpSync, mkdirSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 
@@ -12,4 +13,13 @@ mkdirSync(distDir, { recursive: true });
 cpSync(pagesDir, distDir, { recursive: true });
 cpSync(assetsDir, resolve(distDir, 'assets'), { recursive: true });
 
-console.log('Built static site into dist/');
+await build({
+  entryPoints: [resolve(root, 'src', 'scene', 'studioApp.ts')],
+  bundle: true,
+  format: 'esm',
+  target: 'es2022',
+  minify: true,
+  outfile: resolve(distDir, 'assets', 'studio.js'),
+});
+
+console.log('Built static site and Three.js bundle into dist/');

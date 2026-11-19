@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
-  <div class="progress" id="progress"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <nav class="nav" aria-label="Primary navigation">
     <div class="wrap">
       <a class="brand" href="#top">ScaleNeural <i>AI</i></a>
@@ -28,6 +28,7 @@
           <a href="#process">Process</a>
           <a href="/sectors/">Sectors</a>
           <a href="/about/">About</a>
+          <a href="/studio/">3D Studio</a>
           <a class="btn primary nav-cta" href="#contact">Book an AI audit</a>
         </div>
         <div class="nav-controls">
@@ -61,6 +62,7 @@
           </div>
           <div class="workflow-line"><span>Lead</span><span>Qualify</span><span>Route</span><span>Follow up</span></div>
           <div class="live-line"></div>
+          <a class="workflow-3d-link" href="/studio/">Inspect in interactive 3D →</a>
         </aside>
       </div>
     </header>
@@ -195,6 +197,97 @@
         </div>
       </div>
     </section>
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Common questions</div>
+            <h2>Clarity before you automate.</h2>
+          </div>
+          <p>Answers on how our AI audit works, what gets delivered, and how systems integrate with your team.</p>
+        </div>
+        <div class="faq-list reveal" id="faqList">
+          <article class="faq-item open">
+            <h3>
+              <button class="faq-trigger" type="button" aria-expanded="true" aria-controls="faq-panel-1" id="faq-btn-1">
+                <span>What happens during an AI audit, and what do we receive?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="faq-body">
+                <p>We review your core workflows, software stack, manual handoffs, and data readiness across sales, operations, and support. You receive a clear bottleneck breakdown, estimated time and ROI recovery, and a prioritized automation roadmap ranked by impact versus effort.</p>
+              </div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+                <span>How long does an AI audit and first rollout take?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" aria-hidden="true">
+              <div class="faq-body">
+                <p>Focused AI audits can be completed in 2 to 3 business days (and broader multi-team audits within 5 to 10 business days). For teams looking to scale fast, initial high-impact automations can go live within a few days to a week, while larger multi-system rollouts typically take 2 to 4 weeks.</p>
+              </div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+                <span>Do we need to replace our existing CRM, ERP, or software tools?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" aria-hidden="true">
+              <div class="faq-body">
+                <p>No. We design practical automation around the tools your team already uses—connecting CRMs, inboxes, spreadsheets, ticketing systems, and databases into one coordinated layer without forcing disruptive migrations.</p>
+              </div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+                <span>How do you ensure accuracy, reliability, and data safety?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" aria-hidden="true">
+              <div class="faq-body">
+                <p>Every workflow is built with structured validation, fallback handling, human-in-the-loop checkpoints for sensitive decisions, and scoped permissions so data remains inside your authorized environment.</p>
+              </div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+                <span>How is implementation priced after the audit?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" aria-hidden="true">
+              <div class="faq-body">
+                <p>Implementation scales with workflow scope—from targeted single-process builds under $2,500 to multi-department automation systems. Your audit includes clear, fixed-scope options before any build begins.</p>
+              </div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6">
+                <span>Do you provide team training and ongoing optimization?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" aria-hidden="true">
+              <div class="faq-body">
+                <p>Yes. Every deployment includes operational playbooks, walkthrough training, and handover documentation, with optional ongoing monitoring to refine performance and expand systems that prove ROI.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
     <section id="contact">
       <div class="wrap">
         <div class="cta reveal">
@@ -285,6 +378,9 @@
       <span>© 2026 ScaleNeural AI</span>
     </div>
   </footer>
+  <button class="back-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top" aria-hidden="true" tabindex="-1">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
   <script src="/assets/site.js" defer></script>
 </body>
 </html>
